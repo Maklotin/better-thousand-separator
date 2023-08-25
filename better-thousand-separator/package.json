@@ -1,0 +1,37 @@
+{
+  "name": "better-thousand-separator",
+  "version": "1.0.3",
+  "description": "a simple thousand separator for React. Can separate with comma, period, space, apostrophe and indian-numbering-system",
+  "main": "dist/SeparatorInput.js",
+  "typing": "src/types.d.ts",
+  "scripts": {
+    "test": "npm test",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Maklotin/better-thousand-separator.git"
+  },
+  "keywords": [
+    "react",
+    "number-input",
+    "thousand",
+    "separator",
+    "thousand-separator",
+    "component",
+    "npm-package"
+  ],
+  "author": "Maklotin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Maklotin/better-thousand-separator/issues"
+  },
+  "homepage": "https://github.com/Maklotin/better-thousand-separator#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "typescript": "^5.1.6"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.21"
+  }
+}

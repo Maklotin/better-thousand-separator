@@ -1,0 +1,33 @@
+{
+    "space": {
+      "regex": "\\s",
+      "regexNoLetter": "[a-zA-Z]|\\s",
+      "toLoStr": "no",
+      "separator": " "
+    },
+    "comma": {
+      "regex": ",",
+      "regexNoLetter": "[a-zA-Z]|,",
+      "toLoStr": "en",
+      "separator": ","
+    },
+    "period": {
+      "regex": "\\.",
+      "regexNoLetter": "[a-zA-Z]|\\.",
+      "toLoStr": "da-DK",
+      "separator": "."
+    },
+    "apostrophe": {
+      "regex": "’",
+      "regexNoLetter": "[a-zA-Z]|’",
+      "toLoStr": "de-CH",
+      "separator": "’"
+    },
+    "indian-numbering-system": {
+      "regex": ",",
+      "regexNoLetter": "[a-zA-Z]|,",
+      "toLoStr": "en-IN",
+      "separator": ","
+    }
+  }
+  
