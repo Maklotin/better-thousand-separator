@@ -60,7 +60,7 @@ will be pasted = '123456'
 
 
 ## v1.1.0
-- Uses BigInt instead of Number, allowing users to create bigger numgers.
+- Uses BigInt instead of Number, allowing users to create bigger numbers.
 - Ctrl + X works.
 - Renamed `indian-numbering-system` to `lakh`.
 
