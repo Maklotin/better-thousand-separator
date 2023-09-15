@@ -1,15 +1,16 @@
 import React, { useState, useRef } from 'react';
 import separators from './separators.json'
 
-interface SeparatorInputProps {
+/* global BigInt */
+interface SeparatorInput2Props {
   className?: string;
   id?: string;
   separator?: keyof typeof separators;
 }
-function SeparatorInput(props: SeparatorInputProps) {
+function SeparatorInput2(props: SeparatorInput2Props) {
   const inputField = useRef<HTMLInputElement>(null)
   const inputField2 = useRef<string>('')
-  const [numberValue, setNumberValue] = useState<Array<number>>([])
+  const [numberValue, setNumberValue] = useState<Array<bigint>>([])
   const [inputValue, setInputValue] = useState('')
   const [mousePos, setMousePos] = useState<Array<number>>([0, 0])
 
@@ -20,7 +21,7 @@ function SeparatorInput(props: SeparatorInputProps) {
   const handleOnInput = (event: React.KeyboardEvent<HTMLInputElement>) => {
     inputField2.current = (event.currentTarget.value)
     const numberSplit = (inputField2.current.replace(regex, '')).split('')
-    const parsedNumbers = numberSplit.map(Number);
+    const parsedNumbers = numberSplit.map(BigInt);
     setNumberValue(parsedNumbers);
     const inputElement = inputField.current;
     if (!inputElement) return;
@@ -50,6 +51,7 @@ function SeparatorInput(props: SeparatorInputProps) {
     ];
     if (event.key === 'a' && (event.ctrlKey || event.metaKey)
       || event.key === 'c' && (event.ctrlKey || event.metaKey)
+      || event.key === 'x' && (event.ctrlKey || event.metaKey)
       || event.key === 'v' && (event.ctrlKey || event.metaKey)) {
       return
     }
@@ -69,7 +71,7 @@ function SeparatorInput(props: SeparatorInputProps) {
           const updatedNumberValue = [...numberValue];
           updatedNumberValue.splice(indexToDelete, 1);
           setNumberValue(updatedNumberValue);
-          setInputValue(Number(updatedNumberValue.join('')).toLocaleString(separatorOption.toLoStr));
+          setInputValue(BigInt(updatedNumberValue.join('')).toLocaleString(separatorOption.toLoStr));
           if (inputElement.selectionStart === 1) {
 
             setTimeout(() => {
@@ -99,7 +101,7 @@ function SeparatorInput(props: SeparatorInputProps) {
           const updatedNumberValue = [...numberValue];
           updatedNumberValue.splice(indexToDelete, 1);
           setNumberValue(updatedNumberValue);
-          setInputValue(Number(updatedNumberValue.join('')).toLocaleString(separatorOption.toLoStr));
+          setInputValue(BigInt(updatedNumberValue.join('')).toLocaleString(separatorOption.toLoStr));
           if (cursorPosition === 2) {
             setTimeout(() => {
               const newCursorPosition = cursorPosition - 1;
@@ -121,7 +123,7 @@ function SeparatorInput(props: SeparatorInputProps) {
     }
   }
   function onChange(event: React.ChangeEvent<HTMLInputElement>) {
-    setInputValue(Number(event.currentTarget.value.replace(regex, '')).toLocaleString(separatorOption.toLoStr))
+    setInputValue(BigInt(event.currentTarget.value.replace(regex, '')).toLocaleString(separatorOption.toLoStr))
     const inputElement = inputField.current;
     if (!inputElement) return;
     const cursorPosition = inputElement.selectionStart || 0;
@@ -144,7 +146,7 @@ function SeparatorInput(props: SeparatorInputProps) {
     const clipBoard = event.clipboardData.getData('text/plain')
     const noLettersPaste = clipBoard.replace(regexNoLetter, '')
 
-    setInputValue(Number(noLettersPaste).toLocaleString(separatorOption.toLoStr))
+    setInputValue(BigInt(noLettersPaste).toLocaleString(separatorOption.toLoStr))
     event.preventDefault()
   }
   return (
@@ -164,4 +166,4 @@ function SeparatorInput(props: SeparatorInputProps) {
     />
   );
 }
-export default SeparatorInput;
+export default SeparatorInput2;

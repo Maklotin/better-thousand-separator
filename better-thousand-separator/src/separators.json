@@ -23,7 +23,7 @@
       "toLoStr": "de-CH",
       "separator": "’"
     },
-    "indian-numbering-system": {
+    "lakh": {
       "regex": ",",
       "regexNoLetter": "[a-zA-Z]|,",
       "toLoStr": "en-IN",

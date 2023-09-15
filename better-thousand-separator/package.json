@@ -1,6 +1,6 @@
 {
   "name": "better-thousand-separator",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "description": "a simple thousand separator for React. Can separate with comma, period, space, apostrophe and indian-numbering-system",
   "main": "dist/SeparatorInput.js",
   "typing": "src/types.d.ts",
