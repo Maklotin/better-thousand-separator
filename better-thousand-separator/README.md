@@ -58,6 +58,8 @@ will be pasted = '123456'
 
 ### The `<SeparatorInput />` also supports ID and ClassName.
 
+## v1.1.1
+- nothing really, just added more keywords.
 
 ## v1.1.0
 - Uses BigInt instead of Number, allowing users to create bigger numbers.
